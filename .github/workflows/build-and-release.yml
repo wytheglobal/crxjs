@@ -36,8 +36,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: release-${{ github.sha }}
-        release_name: Release ${{ github.sha }}
+        tag_name: v${{ github.run_number }}
+        release_name: Release ${{ github.run_number }} - ${{ format(github.event.head_commit.timestamp, 'YYYY-MM-DD HH:mm') }}
         draft: false
         prerelease: false
 
